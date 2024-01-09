@@ -145,17 +145,13 @@ const MobileList = ({ items }) => {
   };
 
   const LazyCardImage = ({ src }) => (
-    <Suspense fallback={<Spin tip="Loading" size="large">
-    please wait .... 
-</Spin>}>
+    <Suspense fallback={<Spin tip="Loading image..." />}>
       <Image class="lazy-load" width={380} height={250} src={src} loading="lazy" />
     </Suspense>
   );
 
   if (loading) {
-    return <Spin tip="Loading" size="large">
-    Loading ....
-</Spin>
+    return <Spin tip="Loading..." />;
   }
 
   if (error) {
@@ -169,7 +165,7 @@ const MobileList = ({ items }) => {
   return (
     <Layout>
       
-       
+       <Spin tip="Loading..." spinning={loading}>
       <Sider width={300} style={{ background: "#fff" }}>
         <Sidebar
           handleSearch={handleSearch}
@@ -256,6 +252,7 @@ const MobileList = ({ items }) => {
           />
         </Content>
       </Layout>
+      </Spin>
     </Layout>
   );
 };
