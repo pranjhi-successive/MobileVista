@@ -7,7 +7,9 @@ const MobileListing = () => {
   return (
     <Layout>
       <div style={{ padding: "0 10px", minHeight: 100 }}>
-        <Suspense fallback={<Spin tip="Loading..." />}>
+        <Suspense fallback={<Spin tip="Loading" size="large">
+    Loading .......
+</Spin>}>
           <LazyMobileList />
         </Suspense>
       </div>
