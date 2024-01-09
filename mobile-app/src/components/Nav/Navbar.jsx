@@ -16,9 +16,9 @@ const Navbar = () => {
     <nav className="navbar">
       <Layout>
         <Layout.Header className="nav-header">
-          <div className="logo">
-            <h3 className="brand-font">Mobile Viesta</h3>
-          </div>
+            <div className="logo">
+                <h3 className="brand-font">Mobile  Viesta</h3>
+            </div>
           <div className="navbar-menu">
             <div className="leftMenu">
               <NavBar1 mode={"horizontal"} />
@@ -35,7 +35,7 @@ const Navbar = () => {
               placement="right"
               closable={true}
               onClose={showDrawer}
-              open={visible}
+              visible={visible}
               style={{ zIndex: 99999 }}
             >
               <NavBar1 mode={"inline"} />

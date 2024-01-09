@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Avatar } from "antd";
 import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import "./nav.css";
+import "./nav.css"
 
 const RightMenu = ({ mode }) => {
   return (

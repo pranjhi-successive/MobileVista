@@ -1,69 +1,71 @@
+
 .register-container {
-  display: flexbox;
-  justify-content: left;
-  align-items: left;
-  height: 100vh;
-  top: 90px;
-  left: initial;
-  right: 50px;
-  width: 100%;
-  padding: 10px;
-  text-align: left;
-  transform: translateZ(100px);
-  background: transparent;
-  backdrop-filter: blur(0px);
-  border: none;
-  box-shadow: none;
-  opacity: 1;
-  color: white;
-  content: "";
-  background-size: 100px;
-  background-repeat: no-repeat;
-  border-radius: 12px;
-}
-
-.register-form {
-  max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 0.5s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
+    display:flexbox;
+    justify-content: left;
+    align-items: left;
+    height: 100vh;
+    top: 90px;
+    left: initial;
+    right: 50px;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    transform: translateZ(100px);
+    background: transparent;
+    backdrop-filter: blur(0px);
+    border: none;
+    box-shadow: none;
     opacity: 1;
-    transform: translateY(0);
+    color: white;
+    content: "";
+    inset: 0;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    border-radius: 12px;
   }
-}
-.register-form .ant-form-item {
-  margin-bottom: 16px;
-}
-.register-button {
-  width: 100%;
-  background-color: #1890ff;
-  color: #fff;
-  border: none;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #096dd9;
+  
+  .register-form {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-out;
   }
-}
-.register-button1 {
-  width: 100%;
-  background-color: rgb(241, 241, 206);
-  color: #000000;
-  border: none;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #000000;
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-}
+  .register-form .ant-form-item {
+    margin-bottom: 16px;
+  }
+  .register-button {
+    width: 100%;
+    background-color: #1890ff; 
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #096dd9; 
+    }
+  }
+  .register-button1{
+    width: 100%;
+    background-color: rgb(241, 241, 206);
+    color: #000000;
+    border: none;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #000000; 
+    }
+  }

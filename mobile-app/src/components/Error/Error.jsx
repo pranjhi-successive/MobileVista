@@ -1,6 +1,6 @@
-import React from "react";
-import { Result, Button } from "antd";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Result, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
   return (
@@ -12,8 +12,7 @@ const ErrorPage = () => {
         extra={
           <div style={styles.extraContent}>
             <p style={styles.description}>
-              You can go back to the <Link to="/">homepage</Link> or try
-              searching.
+              You can go back to the <Link to="/">homepage</Link> or try searching.
             </p>
             <Button type="primary" size="large">
               <Link to="/">Back to Homepage</Link>
@@ -27,20 +26,20 @@ const ErrorPage = () => {
 
 const styles = {
   container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    minHeight: "100vh",
-    background: "#f5f5f5",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    background: '#f5f5f5', // Light gray background
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Subtle box-shadow
   },
   extraContent: {
-    textAlign: "center",
-    marginTop: "24px",
+    textAlign: 'center',
+    marginTop: '24px',
   },
   description: {
-    fontSize: "1.2em",
-    marginBottom: "16px",
+    fontSize: '1.2em',
+    marginBottom: '16px',
   },
 };
 

@@ -1,85 +1,61 @@
-import React, { useContext, useState } from "react";
-import { Layout, Menu, Switch } from "antd";
-
+import React from "react";
+import { Nav } from "../Nav";
+import { Link, Route, Routes } from "react-router-dom";
+import MobileDetails from "../../modules/mobiles/ShowDetails/ShowDetail";
 import Slideshow from "./Slideshow";
+import { Footer } from "antd/es/layout/layout";
 import Uploads from "../../modules/mobiles/Uploads";
 import MobileListing from "../../modules/mobiles/MobileListing";
 import "./Dash.css";
-import { DashboardContext } from "../../Route";
-import { Profile } from "../Profile";
-import { Link } from "react-router-dom";
-
-const { Content, Footer } = Layout;
-
-const getItem = (label, key, icon, children, type) => {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-};
-
-const componentMap = {
-  Home: <Slideshow />,
-  Mobiles: <MobileListing />,
-  Uploads: <Uploads />,
-  Profile: <Profile />,
-};
-
-const navBarItems = [
-  getItem("Home", "Home", null, null, "item"),
-  getItem("Mobiles", "Mobiles", null, null, "item"),
-  getItem("Uploads", "Uploads", null, null, "item"),
-  getItem(<Link to={"/login"}>Login</Link>, "Login", null, null, "item"),
-  getItem("Profile", "Profile", null, null, "item"),
-];
+import { ErrorPage } from "../Error";
 
 const Dashboard = () => {
-  const [theme, setTheme] = useState("dark");
-  const { dashboardSelectedItem, setDashboardSelectedItem } =
-    useContext(DashboardContext);
-
-  const changeTheme = (value) => {
-    setTheme(value ? "dark" : "light");
-  };
-
   return (
     <>
-      <Layout>
-        <Menu
-          theme={theme}
-          mode="horizontal"
-          style={{ lineHeight: "64px", borderBottom: "1px solid #e8e8e8" }}
-          items={navBarItems}
-          selectedKeys={[dashboardSelectedItem]}
-          onClick={(e) => setDashboardSelectedItem(e.key)}
-        />
-        <Switch
-        label="switch"
-          checked={theme === "dark"}
-          style={{ marginTop: "10px", width: "70px", height: "25px" }}
-          onChange={changeTheme}
-          checkedChildren="Dark"
-          unCheckedChildren="Light"
-          data-testid="theme-switch"
-        />
-        <Content>{componentMap[dashboardSelectedItem]}</Content>
-      </Layout>
+      <Nav />
+      <div className="header-container">
+      <h1 style={{
+    textAlign: 'center',
+    color: '#4285f4',
+    fontSize: '2.5em',
+    margin: '20px 0',
+    fontFamily: 'Arial, sans-serif',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    letterSpacing: '1px',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
+    background: '#f0f8ff',
+    padding: '10px', 
+    borderRadius: '8px', 
+  }}>
+   MOBILE VIESTA
+</h1>
+        <div className="image-background">
+          <div className="video-background">
+            <Slideshow />
+          </div>
+        </div>
+      </div>
 
+      <Routes>
+        <Route path="/" element={<></>} />
+        <Route path="mobiles" element={<MobileListing />} />
+        <Route path="mobiles/:modelNumber" element={<MobileDetails />} />
+        <Route path="uploads" element={<Uploads />} />
+        <Route path="*" element={<ErrorPage/>}/>
+      </Routes>
       <Footer
-        style={{
-          textAlign: "center",
-          position: "fixed",
-          bottom: "0",
-          width: "100%",
-          backgroundColor: "#f0f8ff",
-          padding: "10px",
-        }}
-      >
-        Mobile Vista ©2023 Created by Pranjhi Singh
-      </Footer>
+  style={{
+    textAlign: "center",
+    position: "fixed",
+    bottom: "0",
+    width: "100%",
+    backgroundColor: "#f0f8ff", 
+    padding: "10px", 
+  }}
+>
+  Mobile Vista ©2023 Created by Pranjhi Singh
+</Footer>
     </>
   );
 };

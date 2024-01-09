@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.12.2",
@@ -18,8 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "sonarqube": "node sonarqube-scanner.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -38,20 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "axios": "axios/dist/node/axios.cjs",
-      "antd/es/layout/layout": "antd/lib/layout/layout",
-      "antd/es/layout/Sider": "antd/lib/layout/Sider",
-      "antd/es/menu/SubMenu": "antd/lib/menu/SubMenu",
-      "antd/es/input/TextArea": "antd/lib/input/TextArea",
-      "antd/es/upload/Dragger": "antd/lib/upload/Dragger",
-      "antd/es/mentions":"antd/lib/mentions"
-    }
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^6.2.0",
-    "sonarqube-scanner": "^3.3.0"
   }
 }

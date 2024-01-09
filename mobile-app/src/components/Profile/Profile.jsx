@@ -13,9 +13,11 @@ const Profile = () => {
     form
       .validateFields()
       .then((values) => {
+        // Check if there are any values provided
         const hasValues = Object.values(values).some((value) => !!value);
 
         if (hasValues) {
+          // After saving, switch back to view mode
           setIsEditMode(false);
 
           message.success("Changes saved successfully");
@@ -29,7 +31,10 @@ const Profile = () => {
   };
 
   const handleCancelClick = () => {
+    // Reset form fields on cancel
     form.resetFields();
+
+    // Switch back to view mode
     setIsEditMode(false);
   };
 
