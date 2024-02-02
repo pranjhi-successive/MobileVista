@@ -1,0 +1,32 @@
+/* styles.css */
+
+.sidebar-container {
+    width: 300px;
+    padding: 16px;
+  }
+  
+  .search-input {
+    margin-bottom: 16px;
+  }
+  
+  .filters-section {
+    margin-bottom: 16px;
+  }
+  
+  .price-slider {
+    margin-bottom: 16px;
+  }
+  
+  .feature-checkbox-group {
+    margin-bottom: 16px;
+  }
+  
+  .color-select {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .buttons-container {
+    margin-top: 8px;
+  }
+  

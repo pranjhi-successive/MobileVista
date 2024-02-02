@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+    background: url('https://www.shutterstock.com/image-photo/abstract-blur-image-background-shopping-600nw-1906991296.jpg');
+    
+    
+
+  background-size: cover;
+  background-position: center;
+}
+h1 {
+  color: #0f2737;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.register-form-container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  padding: 60px 32px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.ant-form-item {
+  margin-bottom: 20px;
+}
+
+
+.ant-input {
+  height: 45px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #000000;
+}
+
+.ant-input:focus {
+  border-color: #3498db;
+}
+
+.ant-input-password:focus {
+  height: 45px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #222;
+}
+
+
+.ant-btn {
+  background: #3498db;
+  border: 1px solid #2691d9;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.ant-btn:hover {
+  background: #2691d9;
+}
+
+.ant-form-item-explain-error {
+  color: #fff;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.ant-checkbox-wrapper {
+  color: #fff;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.ant-checkbox-inner {
+  border-color: #3498db;
+}
+
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #3498db;
+}
+
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: #3498db;
+}
+
+.link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.input-box header {
+  color: #0f2737;
+  font-size: 33px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+}

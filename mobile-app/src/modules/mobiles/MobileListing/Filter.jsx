@@ -1,65 +1,97 @@
-import React from 'react';
-import { Input, Slider, Button, Checkbox, Select } from 'antd';
+import React, { useContext } from "react";
+import "../../mobiles/css/Filter.css";
+import { ListingContext } from "./Listing";
+import colors from "./Colors";
+import brands from "./Brands";
+import { Button, Select, Slider,Search } from "../../../components";
+import { SearchOutlined } from "../../../components/Icons/Icons";
+import { Input } from "antd";
 
-const { Search } = Input;
-const { Option } = Select;
 
-const Sidebar = ({
-  handleSearch,
-  handlePriceRangeChange,
-  clearFilters,
-  handleFeatureChange, 
-  handleColorChange,
-  applyFilters,
-}) => {
-  const colorOptions = ['phantom gray', 'sorta sage','frosted black','aurora white','cosmic black','phantom black','product(red)','mystic bronze'];
-  const featureOptions = ['Wi-Fi', 'Bluetooth', 'GPS'];
+const Sidebar = () => {
+  const colorOptions = Object.values(colors).map((color) => ({
+    label: color,
+    value: color,
+    desc: color,
+  }));
+  const brandOptions = Object.values(brands).map((brand) => ({
+    label: brand,
+    value: brand,
+    desc: brand,
+  }));
 
+  const { setToFetch, filters, setFilters, setCurrentPage, setItemsPerPage } =
+    useContext(ListingContext);
+  const handleRestore = () => {
+    setCurrentPage(1);
+    setItemsPerPage(6);
+  };
   return (
-    <div style={{ width: '300px', padding: '16px', borderRight: '1px solid #e8e8e8' }}>
-      <h3>Filters</h3>
+    <div className="sidebar-container">
       <Search
         placeholder="Search mobiles..."
-        onSearch={handleSearch}
-        enterButton
-        style={{ marginBottom: '16px' }}
+        onChange={(e) => setFilters({ ...filters, searchText: e.target.value })}
+        onPressEnter={()=>setToFetch(true)}
+        enterButton={<SearchOutlined />}
+        onSearch={() => setToFetch(true)}
+        className="search-input"
+        value={filters.searchText}
       />
+      <h3>Filters</h3>
       <b>By Price </b>
       <Slider
+       data-testid="slider"
+       label="slider"
         range
-        defaultValue={[0, 1500]}
+        defaultValue={[0, 2000]}
+        onChange={(value) => setFilters({ ...filters, price: value })}
         max={2000}
-        onChange={handlePriceRangeChange}
-        style={{ marginBottom: '16px' }}
+        value={filters.price}
+        className="price-slider"
       />
-
-<Checkbox.Group style={{ marginBottom: '16px' }} onChange={handleFeatureChange}>
-        {featureOptions.map((feature) => (
-          <Checkbox key={feature} value={feature}>
-            {feature}
-          </Checkbox>
-        ))}
-      </Checkbox.Group>
-
+      <br></br>
+      <b> By Color</b>
       <Select
         mode="multiple"
         placeholder="Select colors"
-        style={{ width: '100%', marginBottom: '16px' }}
-        onChange={handleColorChange}
-      >
-        {colorOptions.map((color) => (
-          <Option key={color} value={color}>
-            {color}
-          </Option>
-        ))}
-      </Select>
+        className="color-select"
+        onChange={(value) => setFilters({ ...filters, color: value })}
+        options={colorOptions}
+        value={filters.color}
+      ></Select>
+      <b>By Brand </b>
+      <Select
+        mode="multiple"
+        data-testid="brand-filter"
+        placeholder="Select brand"
+        className="color-select"
+        onChange={(value) => setFilters({ ...filters, brand: value })}
+        options={brandOptions}
+        value={filters.brand}
+      ></Select>
 
-      <Button type="primary" onClick={applyFilters}>
-        Apply Filters
-      </Button>
-      <Button onClick={clearFilters} style={{ marginLeft: '8px' }}>
-        Clear Filters
-      </Button>
+      <div >
+        <Button
+          type="primary"
+          onClick={() => {
+            handleRestore();
+            setToFetch(true);
+          }}
+          style={{ marginRight: "2.5px" }}
+
+        >
+          Apply Filters
+        </Button>
+        <Button
+          onClick={() => {
+            setFilters({ price: [0, 2000] });
+            handleRestore();
+            setToFetch(true);
+          }}
+        >
+          Clear Filters
+        </Button>
+      </div>
     </div>
   );
 };

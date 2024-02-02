@@ -1,13 +1,5 @@
-import { Layout } from "antd";
-import React from "react";
-import PostingData from "./Data";
-const Uploads=()=>{
-    return(
-        <>
-        <Layout>
-            <PostingData/>
-        </Layout>
-        </>
-    )
-}
-export default Uploads;
+import { lazy } from "react";
+
+const PostingData = lazy(() => import("./Data"));
+export { PostingData };
+

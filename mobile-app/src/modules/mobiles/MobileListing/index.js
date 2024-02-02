@@ -1,13 +1,5 @@
-import { Layout } from "antd"
-import MobileList from "./MobileList"
+import { lazy } from "react";
 
-const MobileListing = () =>{
-    return(
-        <>
-        <Layout>
-            <MobileList/>
-        </Layout>
-        </>
-    )
-}
-export default MobileListing;
+const Listing = lazy(() => import("./Listing"));
+
+export { Listing };

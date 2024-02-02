@@ -1,4 +1,5 @@
-import { UploadOutlined, FileAddOutlined } from "@ant-design/icons";
+import { FileAddOutlined, UploadOutlined } from "../../../components/Icons";
+
 
 const sidebarItems = [
   {
